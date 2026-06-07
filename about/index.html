@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Dr. Mohamed Elfayoumy | Astrafay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .bio-grid {
+      display: grid; grid-template-columns: 380px 1fr;
+      gap: 7rem; align-items: start; padding: 6rem 0;
+    }
+    .bio-photo-frame {
+      width: 100%; aspect-ratio: 3/4;
+      overflow: hidden; position: relative; background: var(--cream);
+    }
+    .bio-photo-frame img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
+    .bio-photo-frame::before { content:''; position:absolute; top:1.2rem; left:1.2rem; width:2.2rem; height:2.2rem; border-top:2px solid var(--gold); border-left:2px solid var(--gold); z-index:2; }
+    .bio-photo-frame::after  { content:''; position:absolute; bottom:1.2rem; right:1.2rem; width:2.2rem; height:2.2rem; border-bottom:2px solid var(--gold); border-right:2px solid var(--gold); z-index:2; }
+
+    .bio-name { font-family:var(--ff-head); font-size:clamp(2.4rem,4vw,3.8rem); font-weight:700; line-height:1.08; letter-spacing:-0.02em; color:var(--ink); margin-bottom:0.5rem; }
+    .bio-role { font-family:var(--ff-mono); font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:2.5rem; }
+    .bio-p { font-size:1.12rem; color:var(--mid); line-height:1.85; margin-bottom:1.5rem; max-width:58ch; }
+
+    .anchor-tags { display:flex; flex-wrap:wrap; gap:0.5rem; margin:2rem 0; }
+    .anchor-tag { font-family:var(--ff-mono); font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; border:1px solid var(--rule); color:var(--mid); padding:0.4rem 0.9rem; background:var(--warm-white); }
+
+    /* Track record grid */
+    .track-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0; border-top:1px solid var(--rule-lt); border-left:1px solid var(--rule-lt);
+      margin-bottom: 6rem;
+    }
+    .track-card { padding:2.5rem 2rem; border-right:1px solid var(--rule-lt); border-bottom:1px solid var(--rule-lt); }
+    .track-icon { font-family:var(--ff-head); font-size:2.4rem; font-weight:700; color:var(--gold); line-height:1; margin-bottom:0.75rem; }
+    .track-label { font-family:var(--ff-mono); font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--mid); margin-bottom:0.6rem; }
+    .track-body { font-size:1rem; color:var(--mid); line-height:1.7; }
+
+    /* Media section */
+    .media-section { background: var(--ink); padding: 6rem 0; }
+    .media-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:0; border-top:1px solid rgba(250,248,244,0.07); border-left:1px solid rgba(250,248,244,0.07); }
+    .media-card { padding:3rem 2.5rem; border-right:1px solid rgba(250,248,244,0.07); border-bottom:1px solid rgba(250,248,244,0.07); transition:background 0.2s; }
+    .media-card:hover { background:rgba(201,169,110,0.05); }
+    .media-card-type { font-family:var(--ff-mono); font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:1.2rem; }
+    .media-card-name { font-family:var(--ff-sub); font-size:1.5rem; font-weight:400; color:var(--paper); margin-bottom:0.75rem; line-height:1.2; }
+    .media-card-body { font-size:1rem; color:rgba(250,248,244,0.5); line-height:1.7; }
+
+    @media (max-width:1100px) {
+      .bio-grid { grid-template-columns:1fr; gap:3.5rem; }
+      .bio-photo-frame { max-width:360px; }
+      .track-grid { grid-template-columns:1fr 1fr; }
+      .media-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width:640px) { .track-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="../index.html" class="nav-logo"><span class="nav-logo-mark"></span>Astrafay</a>
+  <ul class="nav-links">
+    <li><a href="../about/index.html" class="active">About</a></li>
+    <li><a href="../services/index.html">Services</a></li>
+    <li><a href="../clients/index.html">Global Reach</a></li>
+    <li><a href="../team/index.html">Our Team</a></li>
+  </ul>
+  <a href="../index.html#contact" class="nav-cta">Start a Conversation</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">The Principal</div>
+    <h1 class="display" style="color:var(--paper);font-size:clamp(2.8rem,5vw,5rem);margin-bottom:1.2rem;">Dr. Mohamed<br><em>Elfayoumy</em></h1>
+    <p class="body-lg">Physician. Diplomat. McKinsey leader. Founder &amp; CEO of Astrafay.</p>
+  </div>
+</div>
+
+<!-- BIO -->
+<section style="background:var(--paper);">
+  <div class="wrap">
+    <div class="bio-grid">
+      <div class="fade-up">
+        <div class="bio-photo-frame">
+          <img src="../headshot.jpeg" alt="Dr. Mohamed Elfayoumy" />
+        </div>
+      </div>
+      <div class="fade-up">
+        <h2 class="bio-name">Dr. Mohamed<br>Elfayoumy</h2>
+        <div class="bio-role">Founder &amp; CEO &mdash; Astrafay</div>
+
+        <p class="bio-p">
+          Dr. Elfayoumy is one of the region's most distinctive strategic voices: a medical doctor by training, a diplomat by experience, a McKinsey leader by practice, and a public intellectual by conviction. His career spans the highest levels of government, international institutions, and private enterprise — giving him a depth of access and contextual understanding that is genuinely rare.
+        </p>
+        <p class="bio-p">
+          He has served Egypt's diplomatic corps at the most sensitive posting in the Arab world, advised the UN Special Envoy for Syria, led major transformation programmes at McKinsey, and contributed directly to Saudi Vision 2030 — working with the Royal Court, Council of Ministers, and five line ministries.
+        </p>
+        <p class="bio-p">
+          Today, as Founder and CEO of Astrafay, he advises governments, sovereign institutions, and private enterprises on strategy, transformation, and investment across the GCC, Egypt, and sub-Saharan Africa — while continuing to write and speak publicly on the ideas that matter most.
+        </p>
+        <p class="bio-p">
+          He is a Yale alumnus, Stanford CDDRL Fellow, and an active investor in healthcare and technology ventures across MENA and the United States.
+        </p>
+
+        <div class="anchor-tags">
+          <span class="anchor-tag">McKinsey &amp; Company</span>
+          <span class="anchor-tag">Yale University</span>
+          <span class="anchor-tag">Stanford CDDRL</span>
+          <span class="anchor-tag">UN Special Envoy Advisor</span>
+          <span class="anchor-tag">Egyptian Diplomat</span>
+          <span class="anchor-tag">Saudi Vision 2030</span>
+          <span class="anchor-tag">ElRoshetta Podcast</span>
+          <span class="anchor-tag">Al-Ahram</span>
+          <span class="anchor-tag">ThePundit.org</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACK RECORD -->
+<section style="background:var(--cream);padding:6rem 0;">
+  <div class="wrap">
+    <div class="eyebrow fade-up">Track Record</div>
+    <h2 class="display fade-up" style="margin-bottom:3rem;">Fifteen years.<br><em>Consequential work.</em></h2>
+    <div class="track-grid fade-up">
+      <div class="track-card">
+        <div class="track-icon">KSA</div>
+        <div class="track-label">Saudi Vision 2030</div>
+        <div class="track-body">Principal contributor across the Royal Court, Council of Ministers, and five ministries — Health, Finance, Industry, Human Resources, and beyond. Programme architecture through to execution.</div>
+      </div>
+      <div class="track-card">
+        <div class="track-icon">UAE</div>
+        <div class="track-label">Abu Dhabi &amp; Dubai</div>
+        <div class="track-body">Presidential Court, MBZ &amp; MBR Foundations, SEHA, Abu Dhabi Health Authority, Dubai Economy &amp; Tourism — advising at the sovereign and institutional level.</div>
+      </div>
+      <div class="track-card">
+        <div class="track-icon">UN</div>
+        <div class="track-label">Diplomacy &amp; International</div>
+        <div class="track-body">UN Special Envoy advisory, Egyptian consul in Damascus, World Bank engagement, and bilateral diplomatic work across the Levant and wider MENA — before and alongside his consulting career.</div>
+      </div>
+      <div class="track-card">
+        <div class="track-icon">EGY</div>
+        <div class="track-label">Egypt</div>
+        <div class="track-body">Ministry of Petroleum, pharmaceutical sector strategy, and investment facilitation. Deep networks in government and private enterprise. Active columnist in Al-Ahram and ThePundit.org.</div>
+      </div>
+      <div class="track-card">
+        <div class="track-icon">AFR</div>
+        <div class="track-label">Sub-Saharan Africa</div>
+        <div class="track-body">Active healthcare group transformation across Kenya, Morocco, and Ghana — building regional platforms for investment and scale.</div>
+      </div>
+      <div class="track-card">
+        <div class="track-icon">$bn</div>
+        <div class="track-label">Private Sector</div>
+        <div class="track-body">From NEOM to Bosta to Endure Capital — advising enterprises at inflection points of growth, restructuring, and market entry across MENA and beyond.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIA & VOICE -->
+<section class="media-section">
+  <div class="wrap">
+    <div class="eyebrow fade-up" style="color:var(--gold-lt);"><span style="display:block;width:1.75rem;height:1px;background:var(--gold-lt);flex-shrink:0;margin-right:0.8rem;"></span>Voice &amp; Media</div>
+    <h2 class="display fade-up" style="color:var(--paper);margin-bottom:3rem;">Beyond the <em>boardroom.</em></h2>
+    <div class="media-grid fade-up">
+      <div class="media-card">
+        <div class="media-card-type">Podcast &mdash; Host</div>
+        <div class="media-card-name">ElRoshetta</div>
+        <div class="media-card-body">A unique podcast dedicated to healthcare — systems, policy, leadership, and transformation. Dr. Elfayoumy brings the same analytical rigour he applies to his advisory work to conversations that cut through the noise on health in the Arab world and beyond.</div>
+      </div>
+      <div class="media-card">
+        <div class="media-card-type">Columnist</div>
+        <div class="media-card-name">Al-Ahram</div>
+        <div class="media-card-body">One of the Arab world's oldest and most widely-read publications. Dr. Elfayoumy contributes analysis on health, governance, and regional affairs — reaching Arabic-speaking audiences across MENA and the diaspora.</div>
+      </div>
+      <div class="media-card">
+        <div class="media-card-type">Columnist</div>
+        <div class="media-card-name">ThePundit.org</div>
+        <div class="media-card-body">A platform for serious analysis of policy and geopolitics. Dr. Elfayoumy's columns bring a practitioner's perspective to debates that matter — grounded in experience, not theory.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ASTRAFAY -->
+<section style="background:var(--paper);padding:6rem 0 7rem;">
+  <div class="wrap" style="max-width:860px;">
+    <div class="eyebrow fade-up">About Astrafay</div>
+    <h2 class="display fade-up" style="margin-bottom:2rem;">Built for work that <em>actually matters.</em></h2>
+    <p style="font-size:1.1rem;color:var(--mid);line-height:1.85;margin-bottom:1.5rem;" class="fade-up">
+      Astrafay was founded on the belief that advisory at the highest levels requires more than frameworks — it requires genuine relationships, cultural fluency, and the courage to tell clients what they need to hear rather than what they want to hear.
+    </p>
+    <p style="font-size:1.1rem;color:var(--mid);line-height:1.85;margin-bottom:2.5rem;" class="fade-up">
+      The firm brings together a senior team of advisors and domain experts across healthcare, government, finance, infrastructure, and technology — each selected for precision fit to the mandate, never for headcount.
+    </p>
+    <a href="../team/index.html" class="btn btn-dark fade-up">Meet the Team &rarr;</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-mark"><span class="nav-logo-mark"></span><span class="footer-brand">Astrafay</span></div>
+      <div class="footer-tagline">Strategy. Capital. Transformation.</div>
+    </div>
+    <div>
+      <div class="footer-nav-title">Navigate</div>
+      <ul class="footer-nav-list">
+        <li><a href="../about/index.html">About &amp; Principal</a></li>
+        <li><a href="../services/index.html">Services</a></li>
+        <li><a href="../clients/index.html">Global Reach</a></li>
+        <li><a href="../team/index.html">Our Team</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-nav-title">Contact</div>
+      <div class="footer-contact-item"><span class="footer-contact-label">Reach</span><span class="footer-contact-val">GCC &middot; MENA &middot; Africa</span></div>
+      <div class="footer-contact-item"><span class="footer-contact-label">Email</span><span class="footer-contact-val">contact@astrafay.com</span></div>
+      <div class="footer-contact-item"><span class="footer-contact-label">Podcast</span><span class="footer-contact-val">ElRoshetta</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 Astrafay Strategic Advisory LLC.</span>
+    <span>astrafay.com</span>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(el => { if(el.isIntersecting){ setTimeout(()=>el.target.classList.add('visible'),(parseInt(el.target.dataset.delay)||0)); obs.unobserve(el.target); }});
+  }, {threshold:0.07});
+  document.querySelectorAll('.fade-up').forEach((el,i)=>{ el.dataset.delay=(i%3)*80; obs.observe(el); });
+</script>
+</body>
+</html>

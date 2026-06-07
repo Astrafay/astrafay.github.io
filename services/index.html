@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Astrafay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .service-block {
+      display: grid; grid-template-columns: 1fr 1.6fr;
+      gap: 5rem; align-items: start;
+      padding: 5.5rem 0;
+      border-bottom: 1px solid var(--rule-lt);
+    }
+
+    .service-block:last-child { border-bottom: none; }
+
+    .service-block-num {
+      font-family: var(--ff-head);
+      font-size: 5rem; font-weight: 800;
+      color: var(--ink); opacity: 0.06;
+      line-height: 1; letter-spacing: -0.04em;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-block-label {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.8rem;
+    }
+
+    .service-block-title {
+      font-family: var(--ff-head);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700; line-height: 1.15; color: var(--ink);
+    }
+
+    .service-block-body {
+      font-size: 1rem; color: var(--mid);
+      line-height: 1.85; margin-bottom: 2rem;
+    }
+
+    .service-offerings {
+      display: flex; flex-direction: column; gap: 0;
+      border-top: 1px solid var(--rule-lt);
+    }
+
+    .offering {
+      display: flex; align-items: start; gap: 1rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--rule-lt);
+      font-size: 0.92rem; color: var(--ink);
+    }
+
+    .offering::before {
+      content: '→';
+      color: var(--gold); font-size: 0.96rem; flex-shrink: 0; padding-top: 0.05rem;
+    }
+
+    .geo-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--ff-mono);
+      font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase;
+      border: 1px solid rgba(201,169,110,0.3);
+      color: var(--gold); padding: 0.3rem 0.7rem;
+      background: rgba(201,169,110,0.04);
+      margin: 0.2rem;
+    }
+
+    .geo-wrap { margin-top: 1.5rem; }
+
+    @media (max-width: 1100px) {
+      .service-block { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="../index.html" class="nav-logo"><span class="nav-logo-mark"></span>Astrafay</a>
+  <ul class="nav-links">
+    <li><a href="../about/index.html">About</a></li>
+    <li><a href="../services/index.html" class="active">Services</a></li>
+    <li><a href="../clients/index.html">Global Reach</a></li>
+    <li><a href="../team/index.html">Our Team</a></li>
+  </ul>
+  <a href="../index.html#contact" class="nav-cta">Start a Conversation</a>
+</nav>
+
+<div class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">What We Do</div>
+    <h1 class="display" style="color:var(--paper);font-size:clamp(2.8rem,5vw,5rem);margin-bottom:1.2rem;">Four practice<br><em>areas.</em></h1>
+    <p class="body-lg">Rooted in genuine regional expertise. Delivered by a senior, multidisciplinary team. Focused on impact, not activity.</p>
+  </div>
+</div>
+
+<section style="background:var(--paper);padding:3rem 0 6rem;">
+  <div class="wrap">
+
+    <div class="service-block fade-up">
+      <div>
+        <div class="service-block-num">01</div>
+        <div class="service-block-label">Practice Area One</div>
+        <h2 class="service-block-title">Healthcare<br>Transformation</h2>
+      </div>
+      <div>
+        <p class="service-block-body">
+          We bring together clinical knowledge, health system expertise, and strategic consulting rigour in a combination that very few firms can offer. Our healthcare practice covers the full spectrum — from national system redesign to hospital group turnaround, clinical network development, investment strategy, and healthcare PPP frameworks.
+        </p>
+        <p class="service-block-body">
+          Dr. Elfayoumy's medical background gives the practice a credibility and depth that is rare in consulting: we understand what happens inside a hospital, not just around it.
+        </p>
+        <div class="service-offerings">
+          <div class="offering">National health system strategy and redesign</div>
+          <div class="offering">Hospital group governance and transformation</div>
+          <div class="offering">Clinical network and specialty platform development</div>
+          <div class="offering">Healthcare investment and asset valuation</div>
+          <div class="offering">PPP frameworks and government hospital leasing models</div>
+          <div class="offering">Ambulatory surgery centre and specialist clinic rollout</div>
+          <div class="offering">Digital health strategy and AI-enabled primary care</div>
+        </div>
+        <div class="geo-wrap">
+          <span class="geo-badge">Saudi Arabia</span>
+          <span class="geo-badge">UAE</span>
+          <span class="geo-badge">Egypt</span>
+          <span class="geo-badge">Kenya</span>
+          <span class="geo-badge">Morocco</span>
+          <span class="geo-badge">Ghana</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-block fade-up">
+      <div>
+        <div class="service-block-num">02</div>
+        <div class="service-block-label">Practice Area Two</div>
+        <h2 class="service-block-title">Government<br>Advisory</h2>
+      </div>
+      <div>
+        <p class="service-block-body">
+          Effective government advisory requires more than technical competence — it requires understanding how decisions are actually made, how reforms get embedded, and how to navigate the political and institutional dynamics that determine whether a strategy lands or fails.
+        </p>
+        <p class="service-block-body">
+          Our team has operated inside governments — not just alongside them. That distinction matters.
+        </p>
+        <div class="service-offerings">
+          <div class="offering">National programme design and architecture (Vision-aligned)</div>
+          <div class="offering">Policy development and regulatory reform</div>
+          <div class="offering">Institutional restructuring and governance design</div>
+          <div class="offering">Change management and stakeholder alignment</div>
+          <div class="offering">Government-to-government facilitation and diplomatic advisory</div>
+          <div class="offering">Sovereign fund and national investment strategy</div>
+        </div>
+        <div class="geo-wrap">
+          <span class="geo-badge">Saudi Arabia — Vision 2030</span>
+          <span class="geo-badge">UAE</span>
+          <span class="geo-badge">Bahrain</span>
+          <span class="geo-badge">Egypt</span>
+          <span class="geo-badge">World Bank</span>
+          <span class="geo-badge">United Nations</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-block fade-up">
+      <div>
+        <div class="service-block-num">03</div>
+        <div class="service-block-label">Practice Area Three</div>
+        <h2 class="service-block-title">Investment Strategy<br>&amp; Facilitation</h2>
+      </div>
+      <div>
+        <p class="service-block-body">
+          We sit at the intersection of regional market intelligence and global capital. Our investment practice covers both the strategic and transactional — from investment thesis development and due diligence to deal origination and facilitation for sovereign funds, family offices, and institutional investors.
+        </p>
+        <p class="service-block-body">
+          Our particular edge is the quality of our network: we open doors that others cannot, in environments where relationships determine access.
+        </p>
+        <div class="service-offerings">
+          <div class="offering">Sovereign fund investment strategy and portfolio advisory</div>
+          <div class="offering">Cross-border deal origination and facilitation</div>
+          <div class="offering">Due diligence and investment thesis validation</div>
+          <div class="offering">Asset valuation and financial modelling (healthcare, infrastructure)</div>
+          <div class="offering">Investor readiness for growth-stage businesses</div>
+          <div class="offering">Holdco and fund structure design for regional platforms</div>
+        </div>
+        <div class="geo-wrap">
+          <span class="geo-badge">PIF</span>
+          <span class="geo-badge">Abu Dhabi</span>
+          <span class="geo-badge">MENA</span>
+          <span class="geo-badge">East Africa</span>
+          <span class="geo-badge">US</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-block fade-up">
+      <div>
+        <div class="service-block-num">04</div>
+        <div class="service-block-label">Practice Area Four</div>
+        <h2 class="service-block-title">Corporate<br>Transformation</h2>
+      </div>
+      <div>
+        <p class="service-block-body">
+          For enterprises at inflection points — whether scaling, restructuring, entering new markets, or navigating regulatory complexity. We design and execute operating model transformations, leadership transitions, and market entry strategies, with particular depth in regulated sectors and government-adjacent industries.
+        </p>
+        <div class="service-offerings">
+          <div class="offering">Operating model redesign and organisational restructuring</div>
+          <div class="offering">Market entry strategy — MENA and Africa</div>
+          <div class="offering">Executive leadership and Chief Strategy Officer support</div>
+          <div class="offering">Performance management and governance frameworks</div>
+          <div class="offering">Corporate turnaround and value recovery</div>
+          <div class="offering">Strategic communications and stakeholder management</div>
+        </div>
+        <div class="geo-wrap">
+          <span class="geo-badge">NEOM</span>
+          <span class="geo-badge">Saudi German Hospital Group</span>
+          <span class="geo-badge">Bosta</span>
+          <span class="geo-badge">Endure Capital</span>
+          <span class="geo-badge">Africa Healthcare Group</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section style="background:var(--gold);padding:5rem 0;">
+  <div class="wrap">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap;">
+      <h2 style="font-family:var(--ff-head);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;color:var(--ink);max-width:30ch;line-height:1.15;">Every mandate is different. Let's talk about yours.</h2>
+      <a href="../index.html#contact" class="btn" style="background:var(--ink);color:var(--paper);flex-shrink:0;">Start a Conversation &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-mark"><span class="nav-logo-mark"></span><span class="footer-brand">Astrafay</span></div>
+      <div class="footer-tagline">Strategy. Capital. Transformation.</div>
+    </div>
+    <div>
+      <div class="footer-nav-title">Navigate</div>
+      <ul class="footer-nav-list">
+        <li><a href="../about/index.html">About &amp; Principal</a></li>
+        <li><a href="../services/index.html">Services</a></li>
+        <li><a href="../clients/index.html">Global Reach</a></li>
+        <li><a href="../team/index.html">Our Team</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-nav-title">Contact</div>
+      <div class="footer-contact-item"><span class="footer-contact-label">Reach</span><span class="footer-contact-val">GCC &middot; MENA &middot; Africa</span></div>
+      <div class="footer-contact-item"><span class="footer-contact-label">Email</span><span class="footer-contact-val">contact@astrafay.com</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 Astrafay Strategic Advisory LLC.</span><span>astrafay.com</span>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(el => { if(el.isIntersecting){ setTimeout(()=>el.target.classList.add('visible'),(parseInt(el.target.dataset.delay)||0)); obs.unobserve(el.target); }});
+  }, {threshold:0.06});
+  document.querySelectorAll('.fade-up').forEach((el,i)=>{ el.dataset.delay=(i%3)*80; obs.observe(el); });
+</script>
+</body>
+</html>

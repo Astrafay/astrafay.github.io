@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Reach — Astrafay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .geo-section {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--rule-lt);
+    }
+
+    .geo-section:last-child { border-bottom: none; }
+
+    .geo-section-header {
+      display: grid; grid-template-columns: 280px 1fr;
+      gap: 5rem; align-items: start;
+      margin-bottom: 3rem;
+    }
+
+    .geo-flag-label {
+      font-family: var(--ff-head);
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      font-weight: 700; line-height: 1;
+      color: var(--ink); opacity: 0.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    .geo-region-name {
+      font-family: var(--ff-head);
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 700; color: var(--ink); margin-bottom: 0.5rem;
+    }
+
+    .geo-region-sub {
+      font-size: 0.95rem; color: var(--mid); line-height: 1.75; max-width: 52ch;
+    }
+
+    .client-cards-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--rule-lt);
+      border-left: 1px solid var(--rule-lt);
+    }
+
+    .client-card {
+      padding: 2rem;
+      border-right: 1px solid var(--rule-lt);
+      border-bottom: 1px solid var(--rule-lt);
+      transition: background 0.2s;
+    }
+
+    .client-card:hover { background: rgba(201,169,110,0.04); }
+
+    .client-card-type {
+      font-family: var(--ff-mono);
+      font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.6rem;
+    }
+
+    .client-card-name {
+      font-size: 1rem; font-weight: 600; color: var(--ink);
+      line-height: 1.35; margin-bottom: 0.4rem;
+    }
+
+    .client-card-note {
+      font-size: 0.96rem; color: var(--mid); line-height: 1.6;
+    }
+
+    /* V2030 spotlight */
+    .v2030-spotlight {
+      background: var(--ink);
+      padding: 5rem;
+      margin: 0 0 5rem;
+      position: relative; overflow: hidden;
+    }
+
+    .v2030-spotlight::before {
+      content: '2030';
+      font-family: var(--ff-head);
+      font-size: 14rem; font-weight: 800;
+      color: rgba(201,169,110,0.06);
+      position: absolute; right: -2rem; top: 50%;
+      transform: translateY(-50%);
+      line-height: 1; pointer-events: none;
+      letter-spacing: -0.05em;
+    }
+
+    .v2030-eyebrow {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+
+    .v2030-eyebrow::before { content:''; display:block; width:1.75rem; height:1px; background:var(--gold); }
+
+    .v2030-headline {
+      font-family: var(--ff-head);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 700; color: var(--paper);
+      line-height: 1.15; margin-bottom: 1.5rem;
+      max-width: 24ch; position: relative; z-index: 1;
+    }
+
+    .v2030-body {
+      font-size: 1rem; color: rgba(250,248,244,0.6);
+      line-height: 1.8; max-width: 55ch;
+      position: relative; z-index: 1; margin-bottom: 2rem;
+    }
+
+    .ministry-pills {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      position: relative; z-index: 1;
+    }
+
+    .ministry-pill {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
+      border: 1px solid rgba(201,169,110,0.3);
+      color: var(--gold-lt); padding: 0.4rem 0.9rem;
+      background: rgba(201,169,110,0.06);
+    }
+
+    @media (max-width: 1100px) {
+      .geo-section-header { grid-template-columns: 1fr; gap: 1.5rem; }
+      .client-cards-grid { grid-template-columns: 1fr 1fr; }
+      .v2030-spotlight { padding: 3rem 2rem; }
+    }
+
+    @media (max-width: 640px) {
+      .client-cards-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="../index.html" class="nav-logo"><span class="nav-logo-mark"></span>Astrafay</a>
+  <ul class="nav-links">
+    <li><a href="../about/index.html">About</a></li>
+    <li><a href="../services/index.html">Services</a></li>
+    <li><a href="../clients/index.html" class="active">Global Reach</a></li>
+    <li><a href="../team/index.html">Our Team</a></li>
+  </ul>
+  <a href="../index.html#contact" class="nav-cta">Start a Conversation</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Our Portfolio</div>
+    <h1 class="display" style="color:var(--paper);font-size:clamp(2.8rem,5vw,5rem);margin-bottom:1.2rem;">Where we've<br><em>been trusted.</em></h1>
+    <p class="body-lg">Fifteen years of mandates at the apex of government, sovereign capital, and private enterprise — across four regions and four continents.</p>
+  </div>
+</div>
+
+<!-- SECOND TICKER (Client + Credential logos) -->
+<div class="logo-ticker">
+  <div class="logo-ticker-track reverse">
+    <div class="logo-ticker-item"><span class="logo-ticker-text">Saudi Royal Court</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">Council of Ministers</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">PIF</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">NEOM</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">Abu Dhabi Presidential Court</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">MBZ Foundation</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">MBR Foundation</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">Dubai Government</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">World Bank</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">United Nations</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">Tamkeen Fund</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">Ministry of Petroleum — Egypt</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">Saudi German Hospital Group</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">Saudi Health Holding</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">SEHA</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">Bosta</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">Endure Capital</span></div>
+    <!-- duplicate -->
+    <div class="logo-ticker-item"><span class="logo-ticker-text">Saudi Royal Court</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">Council of Ministers</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">PIF</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">NEOM</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">Abu Dhabi Presidential Court</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">MBZ Foundation</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">MBR Foundation</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">Dubai Government</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">World Bank</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">United Nations</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">Tamkeen Fund</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">Ministry of Petroleum — Egypt</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">Saudi German Hospital Group</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">Saudi Health Holding</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">SEHA</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">Bosta</span></div>
+    <div class="logo-ticker-item"><span class="logo-ticker-text">Endure Capital</span></div>
+  </div>
+</div>
+
+<!-- V2030 SPOTLIGHT -->
+<section style="background:var(--cream);padding:6rem 0 0;">
+  <div class="wrap">
+    <div class="v2030-spotlight fade-up">
+      <div class="v2030-eyebrow">Featured Contribution</div>
+      <h2 class="v2030-headline">Saudi Vision 2030 — At the Heart of the Kingdom's Transformation</h2>
+      <p class="v2030-body">
+        Dr. Elfayoumy served as a principal contributor to Saudi Arabia's Vision 2030 programme — working directly with the Royal Court and Council of Ministers to design and implement some of the kingdom's most consequential national reform agendas. His involvement spanned policy architecture, programme design, and on-the-ground execution across five ministries.
+      </p>
+      <div class="ministry-pills">
+        <span class="ministry-pill">Saudi Royal Court</span>
+        <span class="ministry-pill">Council of Ministers</span>
+        <span class="ministry-pill">Ministry of Health</span>
+        <span class="ministry-pill">Ministry of Finance</span>
+        <span class="ministry-pill">Ministry of Industry &amp; Mineral Resources</span>
+        <span class="ministry-pill">Ministry of Human Resources</span>
+        <span class="ministry-pill">Public Investment Fund — PIF</span>
+        <span class="ministry-pill">NEOM</span>
+        <span class="ministry-pill">Saudi German Hospital Group</span>
+        <span class="ministry-pill">Saudi Health Holding Company</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GEO SECTIONS -->
+<section style="background:var(--cream);padding:0 0 2rem;">
+  <div class="wrap">
+
+    <!-- UAE -->
+    <div class="geo-section fade-up">
+      <div class="geo-section-header">
+        <div>
+          <div class="geo-flag-label">UAE</div>
+          <div class="eyebrow">GCC &middot; MENA &middot; Africa</div>
+          <div class="geo-region-name">Abu Dhabi &amp; Dubai</div>
+          <div class="geo-region-sub">Sovereign, institutional, and government advisory at the highest levels of the UAE — from Presidential Court to health authority.</div>
+        </div>
+      </div>
+      <div class="client-cards-grid">
+        <div class="client-card">
+          <div class="client-card-type">Sovereign</div>
+          <div class="client-card-name">Abu Dhabi Presidential Court</div>
+          <div class="client-card-note">Strategic advisory at the highest level of Abu Dhabi's executive authority.</div>
+        </div>
+        <div class="client-card">
+          <div class="client-card-type">Philanthropy</div>
+          <div class="client-card-name">Mohamed bin Zayed Foundation</div>
+          <div class="client-card-note">Global health philanthropy portfolio strategy and operating model.</div>
+        </div>
+        <div class="client-card">
+          <div class="client-card-type">Philanthropy</div>
+          <div class="client-card-name">Mohamed bin Rashid Foundation</div>
+          <div class="client-card-note">Strategic advisory and programme design.</div>
+        </div>
+        <div class="client-card">
+          <div class="client-card-type">Government</div>
+          <div class="client-card-name">Dubai Government</div>
+          <div class="client-card-note">Policy and institutional advisory for the emirate of Dubai.</div>
+        </div>
+        <div class="client-card">
+          <div class="client-card-type">Government</div>
+          <div class="client-card-name">Dubai Economy &amp; Tourism</div>
+          <div class="client-card-note">Economic development and sector strategy.</div>
+        </div>
+        <div class="client-card">
+          <div class="client-card-type">Health Authority</div>
+          <div class="client-card-name">Abu Dhabi Health Authority</div>
+          <div class="client-card-note">Health system strategy and regulatory advisory.</div>
+        </div>
+        <div class="client-card">
+          <div class="client-card-type">Healthcare Group</div>
+          <div class="client-card-name">SEHA — Abu Dhabi Health Services</div>
+          <div class="client-card-note">Operational and strategic transformation of Abu Dhabi's largest health provider.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GCC & International -->
+    <div class="geo-section fade-up">
+      <div class="geo-section-header">
+        <div>
+          <div class="geo-flag-label">GCC</div>
+          <div class="eyebrow">GCC &amp; International</div>
+          <div class="geo-region-name">Bahrain &middot; World Bank &middot; UN</div>
+          <div class="geo-region-sub">Gulf institutional advisory and global multilateral engagement.</div>
+        </div>
+      </div>
+      <div class="client-cards-grid">
+        <div class="client-card">
+          <div class="client-card-type">Development Fund</div>
+          <div class="client-card-name">Tamkeen Fund — Bahrain</div>
+          <div class="client-card-note">Labour market and enterprise development strategy.</div>
+        </div>
+        <div class="client-card">
+          <div class="client-card-type">Multilateral</div>
+          <div class="client-card-name">World Bank</div>
+          <div class="client-card-note">Development programme advisory and economic strategy.</div>
+        </div>
+        <div class="client-card">
+          <div class="client-card-type">Multilateral</div>
+          <div class="client-card-name">United Nations</div>
+          <div class="client-card-note">Advisor to the UN Special Envoy for Syria; diplomatic and humanitarian strategy.</div>
+        </div>
+        <div class="client-card">
+          <div class="client-card-type">Investment</div>
+          <div class="client-card-name">Endure Capital</div>
+          <div class="client-card-note">Venture capital strategy and MENA investment facilitation.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Egypt & Africa -->
+    <div class="geo-section fade-up">
+      <div class="geo-section-header">
+        <div>
+          <div class="geo-flag-label">AFR</div>
+          <div class="eyebrow">Egypt &amp; Africa</div>
+          <div class="geo-region-name">Egypt &middot; Kenya &middot; Morocco &middot; Ghana</div>
+          <div class="geo-region-sub">From government ministry advisory in Egypt to healthcare group transformation across East and West Africa.</div>
+        </div>
+      </div>
+      <div class="client-cards-grid">
+        <div class="client-card">
+          <div class="client-card-type">Government</div>
+          <div class="client-card-name">Ministry of Petroleum — Egypt</div>
+          <div class="client-card-note">Sector strategy and regulatory reform advisory.</div>
+        </div>
+        <div class="client-card">
+          <div class="client-card-type">Sector</div>
+          <div class="client-card-name">Egypt Pharmaceutical Sector</div>
+          <div class="client-card-note">Market development and investment strategy.</div>
+        </div>
+        <div class="client-card">
+          <div class="client-card-type">Private Sector</div>
+          <div class="client-card-name">Bosta</div>
+          <div class="client-card-note">Growth strategy and operational advisory for Egypt's leading logistics platform.</div>
+        </div>
+        <div class="client-card">
+          <div class="client-card-type">Healthcare Group</div>
+          <div class="client-card-name">East Africa Healthcare Group</div>
+          <div class="client-card-note">Chief Strategy &amp; Transformation Officer mandate — Kenya anchor, Morocco and Ghana expansion. ~$15–19M revenue base; investor readiness, governance, and valuation workstreams.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-mark"><span class="nav-logo-mark"></span><span class="footer-brand">Astrafay</span></div>
+      <div class="footer-tagline">Strategy. Capital. Transformation.</div>
+    </div>
+    <div>
+      <div class="footer-nav-title">Navigate</div>
+      <ul class="footer-nav-list">
+        <li><a href="../about/index.html">About &amp; Principal</a></li>
+        <li><a href="../services/index.html">Services</a></li>
+        <li><a href="../clients/index.html">Global Reach</a></li>
+        <li><a href="../team/index.html">Our Team</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-nav-title">Contact</div>
+      <div class="footer-contact-item"><span class="footer-contact-label">Reach</span><span class="footer-contact-val">GCC &middot; MENA &middot; Africa</span></div>
+      <div class="footer-contact-item"><span class="footer-contact-label">Email</span><span class="footer-contact-val">contact@astrafay.com</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 Astrafay Strategic Advisory LLC.</span>
+    <span>astrafay.com</span>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(el => { if(el.isIntersecting){ setTimeout(()=>el.target.classList.add('visible'),(parseInt(el.target.dataset.delay)||0)); obs.unobserve(el.target); }});
+  }, {threshold:0.06});
+  document.querySelectorAll('.fade-up').forEach((el,i)=>{ el.dataset.delay=(i%3)*80; obs.observe(el); });
+</script>
+</body>
+</html>

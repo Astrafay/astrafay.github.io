@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team — Astrafay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .stat-row {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--rule-lt);
+      border-left: 1px solid var(--rule-lt);
+      margin-bottom: 6rem;
+    }
+
+    .stat-cell {
+      padding: 3rem 2.5rem;
+      border-right: 1px solid var(--rule-lt);
+      border-bottom: 1px solid var(--rule-lt);
+    }
+
+    .stat-big {
+      font-family: var(--ff-head);
+      font-size: 3.8rem; font-weight: 700;
+      color: var(--ink); line-height: 1; margin-bottom: 0.5rem;
+    }
+
+    .stat-big span { color: var(--gold); }
+
+    .stat-desc { font-size: 0.92rem; color: var(--mid); line-height: 1.6; }
+
+    .domain-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--rule-lt);
+      border-left: 1px solid var(--rule-lt);
+      margin-bottom: 6rem;
+    }
+
+    .domain-card {
+      padding: 2.5rem;
+      border-right: 1px solid var(--rule-lt);
+      border-bottom: 1px solid var(--rule-lt);
+      position: relative; transition: background 0.2s;
+    }
+
+    .domain-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0;
+      width: 0; height: 2px; background: var(--gold);
+      transition: width 0.4s;
+    }
+
+    .domain-card:hover::after { width: 100%; }
+    .domain-card:hover { background: rgba(201,169,110,0.04); }
+
+    .domain-icon {
+      font-family: var(--ff-mono);
+      font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.2rem;
+    }
+
+    .domain-name {
+      font-family: var(--ff-head);
+      font-size: 1.3rem; font-weight: 700;
+      color: var(--ink); margin-bottom: 0.75rem; line-height: 1.25;
+    }
+
+    .domain-body { font-size: 0.98rem; color: var(--mid); line-height: 1.7; }
+
+    .domain-origins {
+      margin-top: 1rem;
+      font-family: var(--ff-mono);
+      font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--light);
+    }
+
+    .approach-strip {
+      background: var(--ink);
+      padding: 6rem 0;
+    }
+
+    .approach-cols {
+      display: grid; grid-template-columns: 1fr 2fr;
+      gap: 5rem; align-items: start;
+    }
+
+    .approach-item {
+      display: flex; gap: 1.5rem; align-items: start;
+      padding: 2rem 0; border-bottom: 1px solid rgba(250,248,244,0.08);
+    }
+
+    .approach-item:first-child { padding-top: 0; }
+
+    .approach-num {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem; letter-spacing: 0.2em;
+      color: var(--gold); flex-shrink: 0; padding-top: 0.3rem;
+    }
+
+    .approach-title {
+      font-family: var(--ff-sub);
+      font-size: 1.2rem; color: var(--paper); margin-bottom: 0.4rem;
+    }
+
+    .approach-body { font-size: 0.98rem; color: rgba(250,248,244,0.5); line-height: 1.7; }
+
+    @media (max-width: 1100px) {
+      .stat-row { grid-template-columns: 1fr 1fr; }
+      .domain-grid { grid-template-columns: 1fr 1fr; }
+      .approach-cols { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 640px) {
+      .stat-row { grid-template-columns: 1fr 1fr; }
+      .domain-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="../index.html" class="nav-logo"><span class="nav-logo-mark"></span>Astrafay</a>
+  <ul class="nav-links">
+    <li><a href="../about/index.html">About</a></li>
+    <li><a href="../services/index.html">Services</a></li>
+    <li><a href="../clients/index.html">Global Reach</a></li>
+    <li><a href="../team/index.html" class="active">Our Team</a></li>
+  </ul>
+  <a href="../index.html#contact" class="nav-cta">Start a Conversation</a>
+</nav>
+
+<div class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow">Our People</div>
+    <h1 class="display" style="color:var(--paper);font-size:clamp(2.8rem,5vw,5rem);margin-bottom:1.2rem;">A bench built for<br><em>complex work.</em></h1>
+    <p class="body-lg">No generalists. No parachute consultants. Every advisor is chosen for precision fit — with real depth in the sectors and geographies that matter.</p>
+  </div>
+</div>
+
+<!-- STATS -->
+<section style="background:var(--paper);padding:6rem 0 3rem;">
+  <div class="wrap">
+    <div class="stat-row fade-up">
+      <div class="stat-cell">
+        <div class="stat-big">50<span>+</span></div>
+        <div class="stat-desc">Senior advisors and domain experts on the Astrafay bench</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-big">12<span>+</span></div>
+        <div class="stat-desc">Countries of active or recent engagement across four regions</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-big">6</div>
+        <div class="stat-desc">Core practice areas with dedicated expert leadership</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-big">4</div>
+        <div class="stat-desc">Languages of delivery: Arabic, English, French, and beyond</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOMAINS -->
+<section style="background:var(--paper);padding:0 0 5rem;">
+  <div class="wrap">
+    <div class="eyebrow fade-up">Our Expertise</div>
+    <h2 class="display fade-up" style="margin-bottom:3rem;">Six domains.<br><em>Deep expertise.</em></h2>
+    <div class="domain-grid fade-up">
+      <div class="domain-card">
+        <div class="domain-icon">Domain 01</div>
+        <div class="domain-name">Healthcare Systems &amp; Clinical Operations</div>
+        <div class="domain-body">From national health strategy to hospital group transformation, clinical network design, and healthcare investment. Active across KSA, UAE, Egypt, Kenya, Morocco, and Ghana.</div>
+        <div class="domain-origins">Alumni: WHO · Ministry of Health KSA · SEHA · McKinsey Health</div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-icon">Domain 02</div>
+        <div class="domain-name">Government Policy &amp; Institutional Design</div>
+        <div class="domain-body">Policy architecture, programme design, and reform delivery for sovereign clients — from line ministries to Royal Courts and Councils of Ministers.</div>
+        <div class="domain-origins">Alumni: McKinsey Public Sector · World Bank · UN · Government Ministries</div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-icon">Domain 03</div>
+        <div class="domain-name">Sovereign Wealth &amp; Private Capital</div>
+        <div class="domain-body">Investment strategy, deal origination, due diligence, and portfolio advisory for sovereign funds, family offices, and institutional investors across MENA and Africa.</div>
+        <div class="domain-origins">Alumni: PIF · Mubadala · Goldman Sachs · BlackRock MENA</div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-icon">Domain 04</div>
+        <div class="domain-name">Infrastructure &amp; Economic Development</div>
+        <div class="domain-body">Large-scale infrastructure strategy, economic zone development, and industrial policy — including direct involvement in Vision 2030 megaproject architecture.</div>
+        <div class="domain-origins">Alumni: NEOM · ACWA Power · IFC · Arab Fund</div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-icon">Domain 05</div>
+        <div class="domain-name">Digital Transformation &amp; Technology</div>
+        <div class="domain-body">Technology strategy, digital health platforms, AI-enabled government services, and venture ecosystem development across MENA and sub-Saharan Africa.</div>
+        <div class="domain-origins">Alumni: Bain Digital · Google MENA · Careem · STC Pay</div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-icon">Domain 06</div>
+        <div class="domain-name">Diplomacy, Geopolitics &amp; Regional Affairs</div>
+        <div class="domain-body">Regional political intelligence, diplomatic facilitation, and geopolitical risk advisory — grounded in first-hand experience across the Levant, GCC, and North Africa.</div>
+        <div class="domain-origins">Alumni: Egyptian Diplomatic Corps · UN · Arab League · CDDRL</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE ASSEMBLE TEAMS -->
+<div class="approach-strip">
+  <div class="wrap">
+    <div class="approach-cols fade-up">
+      <div>
+        <div class="eyebrow" style="color:var(--gold-lt);"><span style="display:block;width:1.75rem;height:1px;background:var(--gold-lt);flex-shrink:0;margin-right:.8rem;"></span>How We Work</div>
+        <h2 class="display" style="color:var(--paper);font-size:clamp(2rem,3.5vw,3rem);margin-top:1rem;">How we build<br><em>each team.</em></h2>
+      </div>
+      <div>
+        <div class="approach-item">
+          <span class="approach-num">01</span>
+          <div>
+            <div class="approach-title">Mandate-first selection</div>
+            <div class="approach-body">Every engagement begins with understanding what the work actually requires — not what we happen to have available. We assemble the team for the mandate, not the other way around.</div>
+          </div>
+        </div>
+        <div class="approach-item">
+          <span class="approach-num">02</span>
+          <div>
+            <div class="approach-title">Regional fluency is non-negotiable</div>
+            <div class="approach-body">We only deploy advisors who understand the political, cultural, and relationship context of the geography. Technical expertise without regional fluency is not useful to our clients.</div>
+          </div>
+        </div>
+        <div class="approach-item">
+          <span class="approach-num">03</span>
+          <div>
+            <div class="approach-title">Senior from day one</div>
+            <div class="approach-body">The advisor who presents is the advisor who delivers. No bait-and-switch. Our bench is deliberately senior — people who have led, not just supported, consequential mandates.</div>
+          </div>
+        </div>
+        <div class="approach-item">
+          <span class="approach-num">04</span>
+          <div>
+            <div class="approach-title">Confidentiality by design</div>
+            <div class="approach-body">The sensitivity of our work demands absolute discretion. Our advisors operate under strict confidentiality protocols, and we do not publicise client relationships without explicit permission.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JOIN -->
+<section style="background:var(--cream);padding:6rem 0;">
+  <div class="wrap" style="max-width:800px;">
+    <div class="eyebrow fade-up">Join the Network</div>
+    <h2 class="display fade-up" style="margin-bottom:1.5rem;">Work with <em>us.</em></h2>
+    <p style="font-size:1.12rem;color:var(--mid);line-height:1.85;margin-bottom:2rem;" class="fade-up">
+      Astrafay is always looking for exceptional senior advisors, former government officials, and domain specialists who are ready to work on meaningful mandates. We do not hire generalists. If you have deep regional knowledge and real institutional experience, we'd like to hear from you.
+    </p>
+    <a href="../index.html#contact" class="btn btn-dark fade-up">Get in Touch &rarr;</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-mark"><span class="nav-logo-mark"></span><span class="footer-brand">Astrafay</span></div>
+      <div class="footer-tagline">Strategy. Capital. Transformation.</div>
+    </div>
+    <div>
+      <div class="footer-nav-title">Navigate</div>
+      <ul class="footer-nav-list">
+        <li><a href="../about/index.html">About &amp; Principal</a></li>
+        <li><a href="../services/index.html">Services</a></li>
+        <li><a href="../clients/index.html">Global Reach</a></li>
+        <li><a href="../team/index.html">Our Team</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-nav-title">Contact</div>
+      <div class="footer-contact-item"><span class="footer-contact-label">Reach</span><span class="footer-contact-val">GCC &middot; MENA &middot; Africa</span></div>
+      <div class="footer-contact-item"><span class="footer-contact-label">Email</span><span class="footer-contact-val">contact@astrafay.com</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 Astrafay Strategic Advisory LLC.</span><span>astrafay.com</span>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(el => { if(el.isIntersecting){ setTimeout(()=>el.target.classList.add('visible'),(parseInt(el.target.dataset.delay)||0)); obs.unobserve(el.target); }});
+  }, {threshold:0.06});
+  document.querySelectorAll('.fade-up').forEach((el,i)=>{ el.dataset.delay=(i%3)*80; obs.observe(el); });
+</script>
+</body>
+</html>
