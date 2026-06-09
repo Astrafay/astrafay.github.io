@@ -3,58 +3,210 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — Dr. Mohamed Elfayoumy | Astrafay</title>
+  <title>About — Astrafay</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
   <style>
-    .bio-grid {
-      display: grid; grid-template-columns: 380px 1fr;
-      gap: 7rem; align-items: start; padding: 6rem 0;
+    /* ── WORK SECTION ── */
+    .work-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      padding: 6rem 0 4rem;
+      border-bottom: 1px solid var(--rule);
     }
+
+    .work-intro-left {}
+
+    .work-intro-right {
+      padding-top: 0.5rem;
+    }
+
+    .work-intro-body {
+      font-size: 1.08rem; color: var(--mid);
+      line-height: 1.85; margin-bottom: 1.5rem;
+    }
+
+    /* ── CREDENTIAL LOGO GRID ── */
+    .cred-section { padding: 5rem 0; background: var(--cream); }
+
+    .cred-section-title {
+      font-family: var(--ff-mono);
+      font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.75rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .cred-section-title::before { content:''; width:1.75rem; height:1px; background:var(--gold); display:block; }
+
+    .cred-section-heading {
+      font-family: var(--ff-head);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 700; color: var(--ink);
+      margin-bottom: 3rem; line-height: 1.1;
+    }
+
+    .cred-section-heading em { font-style: italic; font-weight: 400; color: var(--gold); }
+
+    /* Logo grid — two rows: academic/institutional then clients */
+    .logo-group { margin-bottom: 3.5rem; }
+
+    .logo-group-label {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--light); margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--rule-lt);
+    }
+
+    .logo-grid {
+      display: flex; flex-wrap: wrap;
+      gap: 0;
+      border-top: 1px solid var(--rule-lt);
+      border-left: 1px solid var(--rule-lt);
+    }
+
+    .logo-cell {
+      flex: 0 0 20%;
+      min-width: 160px;
+      border-right: 1px solid var(--rule-lt);
+      border-bottom: 1px solid var(--rule-lt);
+      padding: 2rem 1.75rem;
+      display: flex; flex-direction: column;
+      align-items: flex-start; justify-content: center;
+      gap: 0.5rem;
+      transition: background 0.2s;
+      min-height: 90px;
+    }
+
+    .logo-cell:hover { background: rgba(201,169,110,0.05); }
+
+    /* The SVG wordmark inside each cell */
+    .logo-cell svg {
+      height: 24px; width: auto; max-width: 130px;
+      display: block;
+    }
+
+    .logo-cell-name {
+      font-family: var(--ff-mono);
+      font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--light); line-height: 1.4; margin-top: 0.3rem;
+    }
+
+    /* ── TRACK RECORD BLOCKS ── */
+    .track-section { background: var(--paper); padding: 5rem 0; }
+
+    .track-blocks {
+      display: flex; flex-direction: column; gap: 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .track-block {
+      display: grid; grid-template-columns: 220px 1fr;
+      gap: 4rem; padding: 3rem 0;
+      border-bottom: 1px solid var(--rule-lt);
+      align-items: start;
+      transition: background 0.2s;
+    }
+
+    .track-block:hover { background: rgba(201,169,110,0.02); }
+
+    .track-block-geo {
+      font-family: var(--ff-head);
+      font-size: 3.5rem; font-weight: 800;
+      color: var(--ink); opacity: 0.07;
+      line-height: 1; letter-spacing: -0.04em;
+      padding-top: 0.2rem;
+    }
+
+    .track-block-label {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.6rem; margin-top: 0.5rem;
+    }
+
+    .track-block-title {
+      font-family: var(--ff-head);
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--ink); margin-bottom: 0.75rem; line-height: 1.2;
+    }
+
+    .track-block-body {
+      font-size: 1rem; color: var(--mid); line-height: 1.8;
+    }
+
+    /* ── BIO SECTION (last) ── */
+    .bio-section { background: var(--cream); padding: 6rem 0; }
+
+    .bio-grid {
+      display: grid; grid-template-columns: 340px 1fr;
+      gap: 6rem; align-items: start;
+    }
+
     .bio-photo-frame {
       width: 100%; aspect-ratio: 3/4;
-      overflow: hidden; position: relative; background: var(--cream);
+      overflow: hidden; position: relative;
     }
-    .bio-photo-frame img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
-    .bio-photo-frame::before { content:''; position:absolute; top:1.2rem; left:1.2rem; width:2.2rem; height:2.2rem; border-top:2px solid var(--gold); border-left:2px solid var(--gold); z-index:2; }
-    .bio-photo-frame::after  { content:''; position:absolute; bottom:1.2rem; right:1.2rem; width:2.2rem; height:2.2rem; border-bottom:2px solid var(--gold); border-right:2px solid var(--gold); z-index:2; }
 
-    .bio-name { font-family:var(--ff-head); font-size:clamp(2.4rem,4vw,3.8rem); font-weight:700; line-height:1.08; letter-spacing:-0.02em; color:var(--ink); margin-bottom:0.5rem; }
-    .bio-role { font-family:var(--ff-mono); font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:2.5rem; }
-    .bio-p { font-size:1.12rem; color:var(--mid); line-height:1.85; margin-bottom:1.5rem; max-width:58ch; }
-
-    .anchor-tags { display:flex; flex-wrap:wrap; gap:0.5rem; margin:2rem 0; }
-    .anchor-tag { font-family:var(--ff-mono); font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; border:1px solid var(--rule); color:var(--mid); padding:0.4rem 0.9rem; background:var(--warm-white); }
-
-    /* Track record grid */
-    .track-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 0; border-top:1px solid var(--rule-lt); border-left:1px solid var(--rule-lt);
-      margin-bottom: 6rem;
+    .bio-photo-frame img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top; display: block;
     }
-    .track-card { padding:2.5rem 2rem; border-right:1px solid var(--rule-lt); border-bottom:1px solid var(--rule-lt); }
-    .track-icon { font-family:var(--ff-head); font-size:2.4rem; font-weight:700; color:var(--gold); line-height:1; margin-bottom:0.75rem; }
-    .track-label { font-family:var(--ff-mono); font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--mid); margin-bottom:0.6rem; }
-    .track-body { font-size:1rem; color:var(--mid); line-height:1.7; }
 
-    /* Media section */
-    .media-section { background: var(--ink); padding: 6rem 0; }
-    .media-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:0; border-top:1px solid rgba(250,248,244,0.07); border-left:1px solid rgba(250,248,244,0.07); }
-    .media-card { padding:3rem 2.5rem; border-right:1px solid rgba(250,248,244,0.07); border-bottom:1px solid rgba(250,248,244,0.07); transition:background 0.2s; }
-    .media-card:hover { background:rgba(201,169,110,0.05); }
-    .media-card-type { font-family:var(--ff-mono); font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:1.2rem; }
-    .media-card-name { font-family:var(--ff-sub); font-size:1.5rem; font-weight:400; color:var(--paper); margin-bottom:0.75rem; line-height:1.2; }
-    .media-card-body { font-size:1rem; color:rgba(250,248,244,0.5); line-height:1.7; }
-
-    @media (max-width:1100px) {
-      .bio-grid { grid-template-columns:1fr; gap:3.5rem; }
-      .bio-photo-frame { max-width:360px; }
-      .track-grid { grid-template-columns:1fr 1fr; }
-      .media-grid { grid-template-columns:1fr; }
+    .bio-photo-frame::before {
+      content: ''; position: absolute; top: 1.2rem; left: 1.2rem;
+      width: 2.2rem; height: 2.2rem;
+      border-top: 2px solid var(--gold); border-left: 2px solid var(--gold); z-index: 2;
     }
-    @media (max-width:640px) { .track-grid { grid-template-columns:1fr; } }
+
+    .bio-photo-frame::after {
+      content: ''; position: absolute; bottom: 1.2rem; right: 1.2rem;
+      width: 2.2rem; height: 2.2rem;
+      border-bottom: 2px solid var(--gold); border-right: 2px solid var(--gold); z-index: 2;
+    }
+
+    .bio-name {
+      font-family: var(--ff-head);
+      font-size: clamp(2.2rem, 3.5vw, 3rem);
+      font-weight: 700; line-height: 1.08; letter-spacing: -0.02em;
+      color: var(--ink); margin-bottom: 0.4rem;
+    }
+
+    .bio-role {
+      font-family: var(--ff-mono);
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 2rem;
+    }
+
+    .bio-p {
+      font-size: 1.05rem; color: var(--mid);
+      line-height: 1.85; margin-bottom: 1.4rem; max-width: 58ch;
+    }
+
+    .media-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+
+    .media-badge {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-family: var(--ff-mono); font-size: 0.62rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      border: 1px solid rgba(200,150,60,0.3);
+      color: var(--gold); padding: 0.45rem 1rem;
+      background: rgba(200,150,60,0.05);
+    }
+
+    @media (max-width: 1100px) {
+      .work-intro { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 0 3rem; }
+      .logo-cell { flex: 0 0 33.33%; }
+      .track-block { grid-template-columns: 1fr; gap: 0.5rem; }
+      .track-block-geo { font-size: 2.5rem; }
+      .bio-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .bio-photo-frame { max-width: 320px; }
+    }
+
+    @media (max-width: 640px) {
+      .logo-cell { flex: 0 0 50%; }
+    }
   </style>
 </head>
 <body>
@@ -73,15 +225,277 @@
 <!-- PAGE HERO -->
 <div class="page-hero">
   <div class="wrap">
-    <div class="eyebrow">The Principal</div>
-    <h1 class="display" style="color:var(--paper);font-size:clamp(2.8rem,5vw,5rem);margin-bottom:1.2rem;">Dr. Mohamed<br><em>Elfayoumy</em></h1>
-    <p class="body-lg">Physician. Diplomat. McKinsey leader. Founder &amp; CEO of Astrafay.</p>
+    <div class="eyebrow">About Astrafay</div>
+    <h1 class="display" style="color:var(--paper);font-size:clamp(2.8rem,5vw,5rem);margin-bottom:1.2rem;">Where deep <em>expertise</em><br>meets real access.</h1>
+    <p class="body-lg">We don't parachute in. We operate at the intersection of government, capital, and transformation — with the relationships, fluency, and track record to prove it.</p>
   </div>
 </div>
 
-<!-- BIO -->
+<!-- WORK INTRO -->
 <section style="background:var(--paper);">
   <div class="wrap">
+    <div class="work-intro">
+      <div class="work-intro-left fade-up">
+        <div class="eyebrow">The Firm</div>
+        <h2 class="display" style="font-size:clamp(2.2rem,3.5vw,3.2rem);">Built for work<br>that <em>actually lands.</em></h2>
+      </div>
+      <div class="work-intro-right fade-up">
+        <p class="work-intro-body">
+          Astrafay was founded on a simple conviction: that the most consequential advisory work happens when deep regional knowledge meets world-class analytical rigour. We advise governments, sovereign funds, and leading enterprises on strategy, transformation, and investment — across the GCC, MENA, and sub-Saharan Africa.
+        </p>
+        <p class="work-intro-body">
+          Effective advisory in this region requires more than technical competence. It requires understanding how decisions are actually made — the political dynamics, the cultural context, and the relationships that determine whether a strategy lands or fails. Our team has operated inside governments and institutions, not just alongside them. That distinction matters.
+        </p>
+        <p class="work-intro-body">
+          We work with a select number of clients at any one time. Every engagement is led by a senior practitioner, supported by a team assembled specifically for the mandate. No generalists. No bait-and-switch.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIAL & CLIENT LOGOS -->
+<section class="cred-section">
+  <div class="wrap">
+    <div class="cred-section-title fade-up">Credentials &amp; Clients</div>
+    <h2 class="cred-section-heading fade-up">Trusted at the<br>highest levels — <em>by name.</em></h2>
+
+    <!-- Academic & Institutional -->
+    <div class="logo-group fade-up">
+      <div class="logo-group-label">Academic &amp; Institutional Background</div>
+      <div class="logo-grid">
+
+        <div class="logo-cell">
+          <svg viewBox="0 0 160 30" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="22" font-family="Georgia,serif" font-size="22" font-weight="bold" letter-spacing="0.5" fill="#1c1812">McKinsey</text>
+          </svg>
+          <span class="logo-cell-name">&amp; Company</span>
+        </div>
+
+        <div class="logo-cell">
+          <svg viewBox="0 0 90 30" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="22" font-family="Georgia,serif" font-size="22" font-weight="bold" letter-spacing="2" fill="#1c1812">YALE</text>
+          </svg>
+          <span class="logo-cell-name">University</span>
+        </div>
+
+        <div class="logo-cell">
+          <svg viewBox="0 0 140 30" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="22" font-family="Georgia,serif" font-size="18" font-weight="bold" letter-spacing="1.5" fill="#1c1812">STANFORD</text>
+          </svg>
+          <span class="logo-cell-name">CDDRL Fellow</span>
+        </div>
+
+        <div class="logo-cell">
+          <svg viewBox="0 0 140 30" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="22" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#1c1812">UNITED NATIONS</text>
+          </svg>
+          <span class="logo-cell-name">Special Envoy Advisor</span>
+        </div>
+
+        <div class="logo-cell">
+          <svg viewBox="0 0 140 30" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="22" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#1c1812">WORLD BANK</text>
+          </svg>
+          <span class="logo-cell-name">Engagement</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Saudi Arabia Clients -->
+    <div class="logo-group fade-up">
+      <div class="logo-group-label">Saudi Arabia</div>
+      <div class="logo-grid">
+        <div class="logo-cell">
+          <svg viewBox="0 0 160 26" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="19" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="1.2" fill="#1c1812">SAUDI ROYAL COURT</text>
+          </svg>
+        </div>
+        <div class="logo-cell">
+          <svg viewBox="0 0 160 26" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="19" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1" fill="#1c1812">COUNCIL OF MINISTERS</text>
+          </svg>
+        </div>
+        <div class="logo-cell">
+          <svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="22" font-family="Arial,sans-serif" font-size="22" font-weight="900" letter-spacing="2" fill="#1c1812">PIF</text>
+          </svg>
+          <span class="logo-cell-name">Public Investment Fund</span>
+        </div>
+        <div class="logo-cell">
+          <svg viewBox="0 0 90 30" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="22" font-family="Arial,sans-serif" font-size="20" font-weight="900" letter-spacing="3" fill="#1c1812">NEOM</text>
+          </svg>
+        </div>
+        <div class="logo-cell">
+          <svg viewBox="0 0 160 26" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="19" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1" fill="#1c1812">MIN. OF HEALTH</text>
+          </svg>
+        </div>
+        <div class="logo-cell">
+          <svg viewBox="0 0 160 26" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="19" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1" fill="#1c1812">MIN. OF FINANCE</text>
+          </svg>
+        </div>
+        <div class="logo-cell">
+          <svg viewBox="0 0 160 26" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="19" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1" fill="#1c1812">MIN. OF INDUSTRY</text>
+          </svg>
+        </div>
+        <div class="logo-cell">
+          <svg viewBox="0 0 160 26" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="19" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1" fill="#1c1812">MIN. OF HUMAN RESOURCES</text>
+          </svg>
+        </div>
+        <div class="logo-cell">
+          <svg viewBox="0 0 160 26" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="13" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="#1c1812">SAUDI GERMAN</text>
+            <text x="0" y="25" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="#1c1812">HOSPITAL GROUP</text>
+          </svg>
+        </div>
+        <div class="logo-cell">
+          <svg viewBox="0 0 160 26" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="13" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="#1c1812">SAUDI HEALTH</text>
+            <text x="0" y="25" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="#1c1812">HOLDING CO.</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- UAE Clients -->
+    <div class="logo-group fade-up">
+      <div class="logo-group-label">UAE</div>
+      <div class="logo-grid">
+        <div class="logo-cell">
+          <svg viewBox="0 0 160 26" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="13" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="#1c1812">ABU DHABI</text>
+            <text x="0" y="25" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="#1c1812">PRESIDENTIAL COURT</text>
+          </svg>
+        </div>
+        <div class="logo-cell">
+          <svg viewBox="0 0 160 26" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="13" font-family="Arial,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1" fill="#1c1812">MBZ FOUNDATION</text>
+          </svg>
+        </div>
+        <div class="logo-cell">
+          <svg viewBox="0 0 160 26" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="13" font-family="Arial,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1" fill="#1c1812">MBR FOUNDATION</text>
+          </svg>
+        </div>
+        <div class="logo-cell">
+          <svg viewBox="0 0 160 26" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="13" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="#1c1812">DUBAI ECONOMY</text>
+            <text x="0" y="25" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="#1c1812">&amp; TOURISM</text>
+          </svg>
+        </div>
+        <div class="logo-cell">
+          <svg viewBox="0 0 90 30" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="22" font-family="Arial,sans-serif" font-size="20" font-weight="900" letter-spacing="2" fill="#1c1812">SEHA</text>
+          </svg>
+          <span class="logo-cell-name">Abu Dhabi Health Services</span>
+        </div>
+        <div class="logo-cell">
+          <svg viewBox="0 0 160 26" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="13" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="#1c1812">ABU DHABI</text>
+            <text x="0" y="25" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="#1c1812">HEALTH AUTHORITY</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- GCC + Egypt + Africa -->
+    <div class="logo-group fade-up">
+      <div class="logo-group-label">GCC, Egypt &amp; Africa</div>
+      <div class="logo-grid">
+        <div class="logo-cell">
+          <svg viewBox="0 0 160 26" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="13" font-family="Arial,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1" fill="#1c1812">TAMKEEN FUND</text>
+            <text x="0" y="25" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="#1c1812">BAHRAIN</text>
+          </svg>
+        </div>
+        <div class="logo-cell">
+          <svg viewBox="0 0 160 26" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="13" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="#1c1812">MIN. OF PETROLEUM</text>
+            <text x="0" y="25" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="#1c1812">EGYPT</text>
+          </svg>
+        </div>
+        <div class="logo-cell">
+          <svg viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="22" font-family="Georgia,serif" font-size="18" font-weight="bold" letter-spacing="1" fill="#1c1812">Bosta</text>
+          </svg>
+        </div>
+        <div class="logo-cell">
+          <svg viewBox="0 0 160 26" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="13" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="#1c1812">ENDURE CAPITAL</text>
+          </svg>
+        </div>
+        <div class="logo-cell">
+          <svg viewBox="0 0 160 26" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="13" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="#1c1812">EAST AFRICA</text>
+            <text x="0" y="25" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="#1c1812">HEALTHCARE GROUP</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TRACK RECORD -->
+<section class="track-section">
+  <div class="wrap">
+    <div class="eyebrow fade-up">Track Record</div>
+    <h2 class="display fade-up" style="margin-bottom:3rem;">Fifteen years.<br><em>Consequential work.</em></h2>
+    <div class="track-blocks fade-up">
+      <div class="track-block">
+        <div class="track-block-geo">KSA</div>
+        <div>
+          <div class="track-block-label">Saudi Vision 2030</div>
+          <div class="track-block-title">At the heart of the Kingdom's transformation</div>
+          <div class="track-block-body">Principal contributor across the Royal Court, Council of Ministers, and five line ministries — Health, Finance, Industry, and Human Resources. Engaged from programme architecture through to on-the-ground execution on some of Vision 2030's most consequential reform agendas.</div>
+        </div>
+      </div>
+      <div class="track-block">
+        <div class="track-block-geo">UAE</div>
+        <div>
+          <div class="track-block-label">Abu Dhabi &amp; Dubai</div>
+          <div class="track-block-title">Sovereign and institutional advisory</div>
+          <div class="track-block-body">Presidential Court, MBZ &amp; MBR Foundations, SEHA, Abu Dhabi Health Authority, Dubai Economy &amp; Tourism — advising at the apex of the UAE's government and institutional landscape.</div>
+        </div>
+      </div>
+      <div class="track-block">
+        <div class="track-block-geo">UN</div>
+        <div>
+          <div class="track-block-label">Diplomacy &amp; International Institutions</div>
+          <div class="track-block-title">UN, World Bank, and bilateral diplomacy</div>
+          <div class="track-block-body">Advisor to the UN Special Envoy for Syria. Egyptian Consul General in Damascus. World Bank engagement across development programmes. Bilateral diplomatic experience across the Levant and wider MENA region.</div>
+        </div>
+      </div>
+      <div class="track-block">
+        <div class="track-block-geo">EGY</div>
+        <div>
+          <div class="track-block-label">Egypt</div>
+          <div class="track-block-title">Government, industry, and private sector</div>
+          <div class="track-block-body">Ministry of Petroleum advisory, pharmaceutical sector strategy, and investment facilitation. Active columnist in Al-Ahram and ThePundit.org. Host of ElRoshetta — a healthcare-focused podcast.</div>
+        </div>
+      </div>
+      <div class="track-block">
+        <div class="track-block-geo">AFR</div>
+        <div>
+          <div class="track-block-label">Sub-Saharan Africa</div>
+          <div class="track-block-title">Healthcare transformation at scale</div>
+          <div class="track-block-body">Active Chief Strategy &amp; Transformation Officer mandate for a pan-African healthcare group — Kenya anchor with Morocco and Ghana expansion. Investor readiness, holdco governance, and valuation workstreams.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPAL BIO (last) -->
+<section class="bio-section">
+  <div class="wrap">
+    <div class="eyebrow fade-up">The Principal</div>
     <div class="bio-grid">
       <div class="fade-up">
         <div class="bio-photo-frame">
@@ -91,113 +505,34 @@
       <div class="fade-up">
         <h2 class="bio-name">Dr. Mohamed<br>Elfayoumy</h2>
         <div class="bio-role">Founder &amp; CEO &mdash; Astrafay</div>
-
         <p class="bio-p">
-          Dr. Elfayoumy is one of the region's most distinctive strategic voices: a medical doctor by training, a diplomat by experience, a McKinsey leader by practice, and a public intellectual by conviction. His career spans the highest levels of government, international institutions, and private enterprise — giving him a depth of access and contextual understanding that is genuinely rare.
+          Dr. Elfayoumy is one of the region's most distinctive strategic voices — a medical doctor by training, a diplomat by experience, a McKinsey leader by practice, and a public intellectual by conviction. His career spans the highest levels of government, international institutions, and private enterprise.
         </p>
         <p class="bio-p">
-          He has served Egypt's diplomatic corps at the most sensitive posting in the Arab world, advised the UN Special Envoy for Syria, led major transformation programmes at McKinsey, and contributed directly to Saudi Vision 2030 — working with the Royal Court, Council of Ministers, and five line ministries.
+          He has served Egypt's diplomatic corps at the most sensitive posting in the Arab world, advised the UN Special Envoy for Syria, led major transformation programmes at McKinsey, and contributed directly to Saudi Vision 2030. He is a Yale alumnus and Stanford CDDRL Fellow, and an active investor in healthcare and technology ventures across MENA and the United States.
         </p>
-        <p class="bio-p">
-          Today, as Founder and CEO of Astrafay, he advises governments, sovereign institutions, and private enterprises on strategy, transformation, and investment across the GCC, Egypt, and sub-Saharan Africa — while continuing to write and speak publicly on the ideas that matter most.
-        </p>
-        <p class="bio-p">
-          He is a Yale alumnus, Stanford CDDRL Fellow, and an active investor in healthcare and technology ventures across MENA and the United States.
-        </p>
-
-        <div class="anchor-tags">
-          <span class="anchor-tag">McKinsey &amp; Company</span>
-          <span class="anchor-tag">Yale University</span>
-          <span class="anchor-tag">Stanford CDDRL</span>
-          <span class="anchor-tag">UN Special Envoy Advisor</span>
-          <span class="anchor-tag">Egyptian Diplomat</span>
-          <span class="anchor-tag">Saudi Vision 2030</span>
-          <span class="anchor-tag">ElRoshetta Podcast</span>
-          <span class="anchor-tag">Al-Ahram</span>
-          <span class="anchor-tag">ThePundit.org</span>
+        <div class="media-row">
+          <span class="media-badge">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:14px;height:14px;stroke:currentColor;stroke-width:1.5">
+              <circle cx="8" cy="8" r="6"/><circle cx="8" cy="8" r="2.5" fill="currentColor"/>
+            </svg>
+            ElRoshetta Podcast
+          </span>
+          <span class="media-badge">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:14px;height:14px;stroke:currentColor;stroke-width:1.5">
+              <path d="M2 4h12M2 8h8M2 12h5"/>
+            </svg>
+            Al-Ahram
+          </span>
+          <span class="media-badge">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:14px;height:14px;stroke:currentColor;stroke-width:1.5">
+              <path d="M2 4h12M2 8h8M2 12h5"/>
+            </svg>
+            ThePundit.org
+          </span>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- TRACK RECORD -->
-<section style="background:var(--cream);padding:6rem 0;">
-  <div class="wrap">
-    <div class="eyebrow fade-up">Track Record</div>
-    <h2 class="display fade-up" style="margin-bottom:3rem;">Fifteen years.<br><em>Consequential work.</em></h2>
-    <div class="track-grid fade-up">
-      <div class="track-card">
-        <div class="track-icon">KSA</div>
-        <div class="track-label">Saudi Vision 2030</div>
-        <div class="track-body">Principal contributor across the Royal Court, Council of Ministers, and five ministries — Health, Finance, Industry, Human Resources, and beyond. Programme architecture through to execution.</div>
-      </div>
-      <div class="track-card">
-        <div class="track-icon">UAE</div>
-        <div class="track-label">Abu Dhabi &amp; Dubai</div>
-        <div class="track-body">Presidential Court, MBZ &amp; MBR Foundations, SEHA, Abu Dhabi Health Authority, Dubai Economy &amp; Tourism — advising at the sovereign and institutional level.</div>
-      </div>
-      <div class="track-card">
-        <div class="track-icon">UN</div>
-        <div class="track-label">Diplomacy &amp; International</div>
-        <div class="track-body">UN Special Envoy advisory, Egyptian consul in Damascus, World Bank engagement, and bilateral diplomatic work across the Levant and wider MENA — before and alongside his consulting career.</div>
-      </div>
-      <div class="track-card">
-        <div class="track-icon">EGY</div>
-        <div class="track-label">Egypt</div>
-        <div class="track-body">Ministry of Petroleum, pharmaceutical sector strategy, and investment facilitation. Deep networks in government and private enterprise. Active columnist in Al-Ahram and ThePundit.org.</div>
-      </div>
-      <div class="track-card">
-        <div class="track-icon">AFR</div>
-        <div class="track-label">Sub-Saharan Africa</div>
-        <div class="track-body">Active healthcare group transformation across Kenya, Morocco, and Ghana — building regional platforms for investment and scale.</div>
-      </div>
-      <div class="track-card">
-        <div class="track-icon">$bn</div>
-        <div class="track-label">Private Sector</div>
-        <div class="track-body">From NEOM to Bosta to Endure Capital — advising enterprises at inflection points of growth, restructuring, and market entry across MENA and beyond.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MEDIA & VOICE -->
-<section class="media-section">
-  <div class="wrap">
-    <div class="eyebrow fade-up" style="color:var(--gold-lt);"><span style="display:block;width:1.75rem;height:1px;background:var(--gold-lt);flex-shrink:0;margin-right:0.8rem;"></span>Voice &amp; Media</div>
-    <h2 class="display fade-up" style="color:var(--paper);margin-bottom:3rem;">Beyond the <em>boardroom.</em></h2>
-    <div class="media-grid fade-up">
-      <div class="media-card">
-        <div class="media-card-type">Podcast &mdash; Host</div>
-        <div class="media-card-name">ElRoshetta</div>
-        <div class="media-card-body">A unique podcast dedicated to healthcare — systems, policy, leadership, and transformation. Dr. Elfayoumy brings the same analytical rigour he applies to his advisory work to conversations that cut through the noise on health in the Arab world and beyond.</div>
-      </div>
-      <div class="media-card">
-        <div class="media-card-type">Columnist</div>
-        <div class="media-card-name">Al-Ahram</div>
-        <div class="media-card-body">One of the Arab world's oldest and most widely-read publications. Dr. Elfayoumy contributes analysis on health, governance, and regional affairs — reaching Arabic-speaking audiences across MENA and the diaspora.</div>
-      </div>
-      <div class="media-card">
-        <div class="media-card-type">Columnist</div>
-        <div class="media-card-name">ThePundit.org</div>
-        <div class="media-card-body">A platform for serious analysis of policy and geopolitics. Dr. Elfayoumy's columns bring a practitioner's perspective to debates that matter — grounded in experience, not theory.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ASTRAFAY -->
-<section style="background:var(--paper);padding:6rem 0 7rem;">
-  <div class="wrap" style="max-width:860px;">
-    <div class="eyebrow fade-up">About Astrafay</div>
-    <h2 class="display fade-up" style="margin-bottom:2rem;">Built for work that <em>actually matters.</em></h2>
-    <p style="font-size:1.1rem;color:var(--mid);line-height:1.85;margin-bottom:1.5rem;" class="fade-up">
-      Astrafay was founded on the belief that advisory at the highest levels requires more than frameworks — it requires genuine relationships, cultural fluency, and the courage to tell clients what they need to hear rather than what they want to hear.
-    </p>
-    <p style="font-size:1.1rem;color:var(--mid);line-height:1.85;margin-bottom:2.5rem;" class="fade-up">
-      The firm brings together a senior team of advisors and domain experts across healthcare, government, finance, infrastructure, and technology — each selected for precision fit to the mandate, never for headcount.
-    </p>
-    <a href="../team/index.html" class="btn btn-dark fade-up">Meet the Team &rarr;</a>
   </div>
 </section>
 
@@ -210,7 +545,7 @@
     <div>
       <div class="footer-nav-title">Navigate</div>
       <ul class="footer-nav-list">
-        <li><a href="../about/index.html">About &amp; Principal</a></li>
+        <li><a href="../about/index.html">About</a></li>
         <li><a href="../services/index.html">Services</a></li>
         <li><a href="../clients/index.html">Global Reach</a></li>
         <li><a href="../team/index.html">Our Team</a></li>
@@ -224,7 +559,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2025 Astrafay Strategic Advisory LLC.</span>
+    <span>&copy; 2025 Astrafay Strategic Advisory LLC. All rights reserved.</span>
     <span>astrafay.com</span>
   </div>
 </footer>
@@ -233,9 +568,17 @@
   const nav = document.getElementById('main-nav');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
   const obs = new IntersectionObserver(entries => {
-    entries.forEach(el => { if(el.isIntersecting){ setTimeout(()=>el.target.classList.add('visible'),(parseInt(el.target.dataset.delay)||0)); obs.unobserve(el.target); }});
-  }, {threshold:0.07});
-  document.querySelectorAll('.fade-up').forEach((el,i)=>{ el.dataset.delay=(i%3)*80; obs.observe(el); });
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        setTimeout(() => el.target.classList.add('visible'), parseInt(el.target.dataset.delay)||0);
+        obs.unobserve(el.target);
+      }
+    });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.fade-up').forEach((el, i) => {
+    el.dataset.delay = (i % 3) * 80;
+    obs.observe(el);
+  });
 </script>
 </body>
 </html>
