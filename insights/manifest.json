@@ -1,0 +1,32 @@
+[
+  {
+    "title": "The Preventive Care Deficit: How GCC Health Systems Are Buying Tomorrow's Crisis Today",
+    "deck": "Gulf governments have built world-class hospitals. They forgot to stop people needing them.",
+    "excerpt": "Billions invested in curative infrastructure while preventive care remains underfunded \u2014 and the chronic disease burden is accelerating.",
+    "date": "11 June 2025",
+    "readTime": 5,
+    "slug": "gcc-preventive-care-deficit",
+    "category": "healthcare",
+    "categoryLabel": "Healthcare & Policy"
+  },
+  {
+    "title": "Abu Dhabi's Quiet Capital War \u2014 And Why It Is Already Winning",
+    "deck": "While the world debated which financial centre would replace London, Abu Dhabi simply made itself indispensable to everyone.",
+    "excerpt": "Abu Dhabi has executed one of the most deliberate capital attraction strategies in history \u2014 and most of its competitors still haven't noticed.",
+    "date": "11 June 2025",
+    "readTime": 5,
+    "slug": "abu-dhabi-capital-war",
+    "category": "geopolitics",
+    "categoryLabel": "GCC & MENA"
+  },
+  {
+    "title": "AI in Arab Healthcare: The Gap Between the Announcement and the Ward",
+    "deck": "Every Gulf health ministry has an AI strategy. Almost none of them have an AI implementation.",
+    "excerpt": "The GCC is spending heavily on healthcare AI. Most of it is going nowhere \u2014 and the reasons are structural, not technical.",
+    "date": "11 June 2025",
+    "readTime": 6,
+    "slug": "ai-arab-healthcare-implementation-gap",
+    "category": "healthcare",
+    "categoryLabel": "AI in Healthcare"
+  }
+]
